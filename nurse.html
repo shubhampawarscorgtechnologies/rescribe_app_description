@@ -123,6 +123,12 @@
     --s-transfer: #0B7A8A;
   }
 
+  /* Anchor offsets use scroll-padding on the scroll container: an embedding
+     WebView may force `scroll-margin-top: 0` on every element, which would
+     otherwise drop headings behind the sticky tab bar. */
+  html { scroll-padding-top: 4.5rem; }
+  html:has(.tabbed) { scroll-padding-top: 7.5rem; }
+
   body {
     background: var(--bg);
     color: var(--ink);
